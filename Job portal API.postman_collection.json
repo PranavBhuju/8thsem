@@ -1,9 +1,10 @@
 {
 	"info": {
-		"_postman_id": "9f242cfb-4ac2-4fbe-a497-6dbe6ef099d1",
+		"_postman_id": "eab2535e-83e6-424b-8663-16f358542fe8",
 		"name": "Job portal API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "33181626"
+		"_exporter_id": "33163040",
+		"_collection_link": "https://planetary-escape-864566.postman.co/workspace/New-Team-Workspace~1866def2-0c26-4a43-8a52-aff38ca0ce47/collection/33163040-eab2535e-83e6-424b-8663-16f358542fe8?action=share&source=collection_link&creator=33163040"
 	},
 	"item": [
 		{
@@ -16,7 +17,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"firstName\": \"admin\",\r\n    \"lastName\": \"admin\",\r\n    \"email\":\"admin1@gmail.com\",\r\n    \"password\": \"admin\",\r\n    \"role\": 1\r\n}",
+							"raw": "{\r\n    \"firstName\": \"guy\",\r\n    \"lastName\": \"might\",\r\n    \"email\":\"guy@gmail.com\",\r\n    \"password\": \"guy123\"\r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -45,7 +46,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\":\"admin12@gmail.com\",\r\n    \"password\": \"suc1234\"\r\n\r\n}",
+							"raw": "{\r\n    \"email\":\"guy@gmail.com\",\r\n    \"password\": \"guy123\"\r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -258,6 +259,36 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "add Jobs history",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"frontend developer\",\r\n    \"description\":\"description\",\r\n    \"salary\":\"3000\",\r\n    \"location\":\"New York\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/api/user/jobhistory",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"user",
+								"jobhistory"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -322,6 +353,68 @@
 								"api",
 								"type",
 								"jobs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update job",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"jobTypeName\":\"frontend dev\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/api/type/update/65db120be414f914a0522970",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"type",
+								"update",
+								"65db120be414f914a0522970"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete job",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/api/type/delete/65db120be414f914a0522970",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"type",
+								"delete",
+								"65db120be414f914a0522970"
 							]
 						}
 					},
@@ -444,7 +537,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9000/api/jobs/show?pageNumber=1&keyword=front&cat=65db28fb89635242c0d6585f",
+							"raw": "http://localhost:9000/api/jobs/show?pageNumber=1&keyword=&cat=&location=Remote",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -462,11 +555,15 @@
 								},
 								{
 									"key": "keyword",
-									"value": "front"
+									"value": ""
 								},
 								{
 									"key": "cat",
-									"value": "65db28fb89635242c0d6585f"
+									"value": ""
+								},
+								{
+									"key": "location",
+									"value": "Remote"
 								}
 							]
 						}
